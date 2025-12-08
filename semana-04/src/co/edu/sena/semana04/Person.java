@@ -1,17 +1,19 @@
 package co.edu.sena.semana04;
 
-public class Persona {
-    private String nombre;
-    private String direccion;
-    private String email;
-    private int identificacion;
+public class Person {
+    protected String nombre;
+    protected String direccion;
+    protected String email;
+    protected int identificacion;
+    private int edad;
 
     // Constructor
-    public Persona(String nombre, String direccion, String email, int identificacion) {
+    public Person(String nombre, String direccion, String email, int identificacion, int edad) {
         this.nombre = nombre;
         this.direccion = direccion;
         this.email = email;
         this.identificacion = identificacion;
+        this.edad = edad;
     }
 
     // Getters y Setters
@@ -21,6 +23,14 @@ public class Persona {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
     }
 
     public String getDireccion() {
@@ -54,6 +64,10 @@ public class Persona {
         System.out.println("Email: " + email);
         System.out.println("Identificacion: " + identificacion);
     }
-
-
+    public boolean esMayorDeEdad() {
+        return edad >= 18; // Regresa true si la persona tiene 18 años o más
+    }
+    public void inscribirEnActividad(String actividad) {
+        System.out.println(nombre + " ha sido inscrito en la actividad: " + actividad);
+    }
 }
