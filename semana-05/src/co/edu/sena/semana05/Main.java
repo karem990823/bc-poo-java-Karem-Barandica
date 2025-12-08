@@ -54,7 +54,7 @@ public class Main {
         YogaRoom yogaRoom4 = new YogaRoom("Sala 4", 104, instructor1, 30, true, "Colchonetas", 25);
 
         // Crear un centro de yoga
-        YogaCenter yogaCenter = new YogaCenter("Centro de Yoga SANA");
+        YogaCenter yogaCenter = new YogaCenter("Equilibrio y Bienestar");
 
         // Agregar salas al centro de yoga
         yogaCenter.agregarYogaRoom(yogaRoom1);
@@ -92,5 +92,6 @@ public class Main {
         yogaCenter.buscarYogaRoomExacta(25);
     }
 }
+
 
 
