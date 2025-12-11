@@ -61,26 +61,31 @@ El sistema debe ser capaz de procesar la inscripción de nuevos estudiantes (apr
 ## Jerarquía de Clases
 
 ```
-                                              <<abstract>>
-                                             WellnessClass
-                                                   |
-                                            +------+------+
-                                            |             |
-                                      YogaClass         MeditationClass
-                                                   |
-               +-- implements Reservable +-- implements Calificable +-- implements Pagable
+
+                     <<abstract>>
+                     WellnessClass
+                          |
+                +---------+---------+
+                |                   |
+           YogaClass        MeditationClass
 
 
+                     <<abstract>>
+                    WellnessService
+                          |
+                +---------+---------+
+                |                   |
+         HolisticTherapy     NutritionalPlan
 
 
-                                              <<abstract>>
-                                            WellnessService
-                                                   |
-                                            +------+------+
-                                            |             |
-                                    HolisticTherapy    NutritionalPlan
-                                                   |
-               +-- implements Reservable +-- implements Calificable +-- implements Pagable
+Interfaces:
++----------------+     +----------------+     +----------------+
+|   Reservable   |     |   Calificable  |     |    Pagable     |
++----------------+     +----------------+     +----------------+
+
+Implementaciones:
+YogaClass -------- implements -------- Reservable, Calificable, Pagable
+HolisticTherapy -- implements -------- Reservable, Calificable, Pagable
 
 
 ```
@@ -137,4 +142,5 @@ Por ejemplo:
 - Un sistema de feedback trabaja con objetos `Calificable`.
 
 Esto desacopla el código, permite sustituir clases concretas fácilmente y facilita la escalabilidad del sistema.
+
 
